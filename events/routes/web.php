@@ -12,11 +12,18 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('Home.category');
 });
+
+Route::get('/contact-us', function () {
+    return view('contact-us');
+});
+
 
 Auth::routes();
 
 Route::get('/home', 'CategoreyController@index')->name('home');
 Route::resource ('/category','CategoryController');
+Route::resource ('/event','EventController');
+
 
