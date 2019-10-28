@@ -14,3 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', 'CategoreyController@index')->name('home');
+Route::resource ('/category','CategoryController');
+
