@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+
+use App\Category;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -13,7 +15,14 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        return view('Home.category');
+
+
+        $category_list = Category::all();
+
+
+
+        return view('Home.category',compact('category_list'));
+
     }
 
     /**

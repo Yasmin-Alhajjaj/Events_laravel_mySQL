@@ -47,8 +47,10 @@
 
         <div id="navbarSupportedContent" class="collapse navbar-collapse">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item active"><a href="#" class="nav-link">Home <span class="sr-only">(current)</span></a>
-                </li>
+
+
+                <li class="nav-item active"><a href="{{route('category.index')}}" class="nav-link">Home <span class="sr-only">(current)</span></a></li>
+
                 <li class="nav-item"><a href="#" class="nav-link">About</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">Services</a></li>
                 <li class="nav-item"><a href="/contact-us" class="nav-link">Contact</a></li>

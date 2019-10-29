@@ -2,77 +2,34 @@
 
 @section('content')
 
-
-
-
-    <!-- Intro -->
-
     <div class="intro">
         <div class="intro_content d-flex flex-row flex-wrap align-items-start justify-content-between">
 
-            <!-- Intro Item -->
+    @foreach($category_list as $list)
+                <!-- Intro Item -->
 
-            <div class="intro_item" >
-                <a href="{{route('event.show',['id' => 'Sport'])}}">
-                <div class="intro_image"><img src="images/intro_1.jpg" alt=""></div>
-                <div class="intro_body">
-                    <div class="intro_title"><a href="#">Sport</a></div>
-                    <div class="intro_subtitle">Donec quis metus ac arcu luctus accumsan.</div>
+                <div class="intro_item" >
+                    <a href="{{route('event.show',['id' => $list->id])}}">
+                        <div class="intro_image"><img height="250px" width="100%" src="{{$list->photo}}" alt=""></div>
+                        <div class="intro_body">
+                            <div class="intro_title"><a href="#">{{$list->name}}</a></div>
+                            <div class="intro_subtitle">{{$list->description}}</div>
+                        </div>
+                    </a>
                 </div>
-            </a>
-            </div>
 
 
-            <!-- Intro Item -->
-            <div class="intro_item">
-                <a href="{{route('event.show',['id' => 'Technology'])}}">
-
-                <div class="intro_image"><img src="images/intro_2.jpg" alt=""></div>
-                <div class="intro_body">
-                    <div class="intro_title"><a href="#">Technology</a></div>
-                    <div class="intro_subtitle">Donec quis metus ac arcu luctus accumsan.</div>
-                </div>
-                </a>
-            </div>
-
-            <!-- Intro Item -->
-            <div class="intro_item">
-                <div class="intro_image"><img src="images/intro_3.jpg" alt=""></div>
-                <div class="intro_body">
-                    <div class="intro_title"><a href="#">Family</a></div>
-                    <div class="intro_subtitle">Donec quis metus ac arcu luctus accumsan.</div>
-                </div>
-            </div>
-
-            <!-- Intro Item -->
-            <div class="intro_item">
-                <div class="intro_image"><img src="images/intro_4.jpg" alt=""></div>
-                <div class="intro_body">
-                    <div class="intro_title"><a href="#">Kids</a></div>
-                    <div class="intro_subtitle">Donec quis metus ac arcu luctus accumsan.</div>
-                </div>
-            </div>
-
-            <!-- Intro Item -->
-            <div class="intro_item">
-                <div class="intro_image"><img src="images/intro_5.jpg" alt=""></div>
-                <div class="intro_body">
-                    <div class="intro_title"><a href="#">Education</a></div>
-                    <div class="intro_subtitle">Donec quis metus ac arcu luctus accumsan.</div>
-                </div>
-            </div>
-
-            <!-- Intro Item -->
-            <div class="intro_item">
-                <div class="intro_image"><img src="images/intro_6.jpg" alt=""></div>
-                <div class="intro_body">
-                    <div class="intro_title"><a href="#">Languages</a></div>
-                    <div class="intro_subtitle">Donec quis metus ac arcu luctus accumsan.</div>
-                </div>
-            </div>
+            @endforeach
 
         </div>
     </div>
+    <!-- Intro -->
+
+
+
+
+
+
 
     <!--
      Calendar
