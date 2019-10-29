@@ -50,11 +50,7 @@ class EventController extends Controller
      */
     public function show($id)
     {
-<<<<<<< HEAD
         $category_id=$id;
-=======
-        $category_id=2;
->>>>>>> 3fd24328d767909e22d32a0f03e620cf9d969560
         $find=Category::findOrFail($category_id);
         $event=$find->event()->get();
         return view('Events.event',compact('event'));
