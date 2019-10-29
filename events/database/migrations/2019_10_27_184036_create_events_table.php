@@ -18,7 +18,8 @@ class CreateEventsTable extends Migration
             $table->string('name');
             $table->text('description');
             $table->string('location');
-            $table->timestamp('date');
+            $table->date('date');
+            $table->timestamp('time');
             $table->unsignedInteger('price');
             $table->boolean('active')->default(false);
             $table->string('photo');

@@ -35,16 +35,20 @@
     <div class="container">
         <a href="#" class="navbar-brand">
             <!-- Logo Image -->
-            <img src="https://res.cloudinary.com/mhmd/image/upload/v1557368579/logo_iqjuay.png" width="45" alt="" class="d-inline-block align-middle mr-2">
+            <img src="https://res.cloudinary.com/mhmd/image/upload/v1557368579/logo_iqjuay.png" width="45" alt=""
+                 class="d-inline-block align-middle mr-2">
             <!-- Logo Text -->
             <span class="text-uppercase font-weight-bold">Event</span>
         </a>
 
-        <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span></button>
+        <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                class="navbar-toggler"><span class="navbar-toggler-icon"></span></button>
 
         <div id="navbarSupportedContent" class="collapse navbar-collapse">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item active"><a href="#" class="nav-link">Home <span class="sr-only">(current)</span></a></li>
+                <li class="nav-item active"><a href="#" class="nav-link">Home <span class="sr-only">(current)</span></a>
+                </li>
                 <li class="nav-item"><a href="#" class="nav-link">About</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">Services</a></li>
                 <li class="nav-item"><a href="/contact-us" class="nav-link">Contact</a></li>
@@ -96,14 +100,14 @@
 </nav>
 
 
-    @yield('content')
-
-
-    <div class="footer_extra">
+@yield('content')
+<footer>
+    <div class="footer_extra ">
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <div class="footer_extra_content d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-start justify-content-center">
+                    <div
+                        class="footer_extra_content d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-start justify-content-center">
                         <div class="footer_social">
                             <div class="footer_social_title">Follow us on Social Media</div>
                             <ul class="footer_social_list">
@@ -123,20 +127,23 @@
                                     <li><a href="#">Privacy</a></li>
                                 </ul>
                             </div>
-                            <div class="copyright"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                                Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></div>
+                            <div class="copyright">
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+                                All rights reserved | This template is made with <i class="fa fa-heart-o"
+                                                                                    aria-hidden="true"></i> by <a
+                                    href="https://colorlib.com" target="_blank">Colorlib</a>
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    </footer>
+</footer>
 
 </div>
-
-
 </body>
 
 </html>
