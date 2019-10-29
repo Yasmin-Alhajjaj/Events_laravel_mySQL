@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Comment;
+use App\Event;
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CommentController extends Controller
 {
@@ -14,6 +18,7 @@ class CommentController extends Controller
     public function index()
     {
         //
+
     }
 
     /**
@@ -35,6 +40,21 @@ class CommentController extends Controller
     public function store(Request $request)
     {
         //
+        $user_id=Auth::id();
+//        $user=User::findOrFail($user_id);
+        if($user_id) {
+
+            comment::create([
+                    'user_id' => $user_id,
+                    'event_id' => $request->input('event_id'),
+                    'description' => $request->input('description')
+                ]
+            );
+
+            return back();
+        }
+        else return redirect()->route("login");
+
     }
 
     /**
@@ -46,6 +66,11 @@ class CommentController extends Controller
     public function show($id)
     {
         //
+
+        $event_id=$id;
+        $event=Event::findOrFail($event_id);
+        $comment=$event->comment()->get();
+        return view('Events.info',compact('comment','event'));
     }
 
     /**

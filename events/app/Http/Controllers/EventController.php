@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
+use App\Event;
 use Illuminate\Http\Request;
 
 class EventController extends Controller
@@ -36,8 +38,7 @@ class EventController extends Controller
     public function store(Request $request)
     {
         //
-        dd($request);
-        return "dfgfdg";
+
     }
 
     /**
@@ -48,7 +49,10 @@ class EventController extends Controller
      */
     public function show($id)
     {
-        return view('Events.event',compact('id'));
+        $category_id=$id;
+        $find=Category::findOrFail($category_id);
+        $event=$find->event()->get();
+        return view('Events.event',compact('event'));
     }
 
     /**
@@ -83,5 +87,15 @@ class EventController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+
+    public function info($event_id)
+    {
+
+        $event=Event::findOrFail($event_id);
+        return view('Events.info',compact('event'));
+
+
     }
 }
