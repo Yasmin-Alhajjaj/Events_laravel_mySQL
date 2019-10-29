@@ -21,5 +21,8 @@ Route::resource ('/event','EventController');
 
 Route::resource ('/comment','CommentController');
 
+//Route::get('/home', 'EventController@info')->name('home');
+
+
 
 Route::get('/{event_id}/info', 'EventController@info')->name('info');
