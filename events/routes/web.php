@@ -22,7 +22,7 @@ Route::get('/contact-us', function () {
 
 Auth::routes();
 
-Route::get('/home', 'CategoreyController@index')->name('home');
+Route::get('/home', 'CategoryController@index')->name('home');
 Route::resource ('/category','CategoryController');
 Route::resource ('/event','EventController');
 
