@@ -25,6 +25,8 @@ Auth::routes();
 Route::get('/home', 'CategoryController@index')->name('home');
 Route::resource ('/category','CategoryController');
 Route::resource ('/event','EventController');
-// Maqableh Abooooooooooooood;
 
 
+
+
+Route::get('/{event_id}/info', 'EventController@info')->name('info');
