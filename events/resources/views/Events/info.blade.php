@@ -2,7 +2,7 @@
 
 @section('content')
 
-
+///info
  <h1 style="color: black" >name:</h1>  <h4>{{$event->name}} </h4>
   <h1 style="color: black">location:</h1> <h4>{{$event->location}} </h4>
  <h1 style="color: black">description:</h1> <h4>{{$event->description}} </h4>
