@@ -15,7 +15,9 @@ Route::get('/', 'CategoryController@index')->name('home');
 Route::get('/home', 'CategoryController@index')->name('home');
 Route::resource ('/category','CategoryController');
 Route::resource ('/event','EventController');
+Route::resource ('/comment','CommentController');
 
+//Route::get('/home', 'EventController@info')->name('home');
 
 
 
