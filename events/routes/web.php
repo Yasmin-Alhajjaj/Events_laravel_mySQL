@@ -25,6 +25,6 @@ Auth::routes();
 Route::get('/home', 'CategoryController@index')->name('home');
 Route::resource ('/category','CategoryController');
 Route::resource ('/event','EventController');
-// Maqableh Abooooooooooooood;
+//Maqableh Abooooooooooooood;
 
 
