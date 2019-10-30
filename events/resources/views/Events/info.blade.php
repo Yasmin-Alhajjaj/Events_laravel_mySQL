@@ -2,6 +2,12 @@
 
 @section('content')
 
+    @if ($message = Session::get('success'))
+        <div class="alert alert-danger alert-info">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            <strong>{{ $message }}</strong>
+        </div>
+    @endif
 
 {{-- <h1 style="color: black" >name:</h1>  <h4>{{$event->name}} </h4>--}}
 {{--  <h1 style="color: black">location:</h1> <h4>{{$event->location}} </h4>--}}
@@ -60,7 +66,13 @@
 
 
 
-
+{{--<script>--}}
+{{--    let msg = '{{Session::get('alert')}}';--}}
+{{--    let exist = '{{Session::has('alert')}}';--}}
+{{--    if(exist){--}}
+{{--        alert(msg);--}}
+{{--    }--}}
+{{--</script>--}}
 
 
 
