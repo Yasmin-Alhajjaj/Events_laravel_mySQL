@@ -40,6 +40,8 @@ class CommentController extends Controller
     public function store(Request $request)
     {
         //
+
+
         $user_id=Auth::id();
 //        $user=User::findOrFail($user_id);
         if($user_id) {
@@ -53,7 +55,13 @@ class CommentController extends Controller
 
             return back();
         }
-        else return redirect()->route("login");
+        else {
+//            return redirect()->back() ->with('alert', 'Place login');
+
+//         return redirect()->route("login");
+            return back()->with('success', 'pleacse register or login');
+
+        }
 
     }
 
