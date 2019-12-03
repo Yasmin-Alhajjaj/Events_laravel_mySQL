@@ -22,7 +22,7 @@ class CreateEventsTable extends Migration
             $table->time('time');
             $table->unsignedInteger('price');
             $table->boolean('active')->default(false);
-            $table->string('photo');
+            $table->string('photo')->nullable();
             $table->unsignedBigInteger('category_id');
             $table->timestamps();
             $table->foreign('category_id')->references('id')->on('categories');

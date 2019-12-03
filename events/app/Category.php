@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Category extends Model
 {
     //
-    public function event()
-    {
+    public function event(){
         return $this->hasMany('App\Event');
     }
+
 }

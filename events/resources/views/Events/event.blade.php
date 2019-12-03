@@ -8,10 +8,10 @@
         @foreach($event as $events)
             <!-- Intro Item -->
                 <div class="intro_item" >
-<!-- {{--                    <a href="/{{$events->id}}/info">--}} -->
-                        <a href="{{route('comment.show',['id' => $events->id])}}">
+                <!-- {{--                    <a href="/{{$events->id}}/info">--}} -->
+                    <a href="{{route('comment.show',['id' => $events->id])}}">
 
-                        <div class="intro_image"><img src={{$events->photo}} alt=""></div>
+                        <div class="intro_image"><img src="{{asset('storage').'/'.$events->photo}}" alt=""></div>
                         <div class="intro_body">
                             <div class="intro_title"><a href="#">{{$events->name}}</a></div>
                             <div class="intro_subtitle">{{$events->description}}</div>

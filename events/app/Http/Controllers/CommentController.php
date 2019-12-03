@@ -77,7 +77,7 @@ class CommentController extends Controller
 
         $event_id=$id;
         $event=Event::findOrFail($event_id);
-        $comment=$event->comment()->get();
+        $comment=$event->comment()->with('user')->get();
         return view('Events.info',compact('comment','event'));
     }
 

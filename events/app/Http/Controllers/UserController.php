@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Category;
 use App\Event;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class EventController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,7 +17,6 @@ class EventController extends Controller
     public function index()
     {
         //
-        return view('Home.category');
     }
 
     /**
@@ -38,31 +37,7 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
-        // dd(request()->image->store('uploads', 'public'));
-        //dd($request->input('category_id'));
-        $this->validate($request, [
-            'name'  => 'required',
-            'des'  => 'required',
-            'location'  => 'required',
-            'date'  => 'required',
-            'time'  => 'required',
-            'price'  => 'required',
-            'image'=> 'required',
-            'category_id' => 'required',
-        ]);
-
-        Event::create([
-            'name'=> $request->input('name'),
-            'description'=> $request->input('des'),
-            'location'=> $request->input('location'),
-            'date'=> $request->input('date'),
-            'time'=> $request->input('time'),
-            'price'=> $request->input('price'),
-            'photo' => request()->image->store('uploads', 'public'),
-            'category_id'=>$request->input('category_id'),
-        ]);
-        return redirect()->route('category.index');
-        //return view('Home.category');;
+        //
     }
 
     /**
@@ -73,10 +48,7 @@ class EventController extends Controller
      */
     public function show($id)
     {
-        $category_id=$id;
-        $find=Category::findOrFail($category_id);
-        $event=$find->event()->get();
-        return view('Events.event',compact('event'));
+        //
     }
 
     /**
@@ -99,7 +71,55 @@ class EventController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+//            dd($request->input('name'));
+//           dd($id);
+
+        User::findOrFail($id)
+            ->update(['name' => $request->input('name')]);
+        User::findOrFail($id)
+            ->update(['email' => $request->input('email')]);
+        User::findOrFail($id)
+            ->update(['phone' => $request->input('phone')]);
+
+
+
+        return view('profile');
+
+
+    }
+
+
+    public function update_point(Request $request, $id)
+    {
+//            dd($request->input('name'));
+//           dd(Event::findOrFail($id));
+
+//        User::findOrFail($id)
+//            ->update(['name' => $request->input('name')]);
+//        User::findOrFail($id)
+//            ->update(['email' => $request->input('email')]);
+//        User::findOrFail($id)
+//            ->update(['phone' => $request->input('phone')]);
+
+        User::where("id",Auth::user()->id)
+            ->increment('points', 5);
+
+
+        $event = Event::findOrFail($id);
+        User::findOrFail(Auth::user()->id)
+            ->update(['remember_token' => $event->photo]);
+
+
+
+
+
+
+
+
+
+        return view('profile',compact('event'));
+
+
     }
 
     /**
@@ -111,15 +131,5 @@ class EventController extends Controller
     public function destroy($id)
     {
         //
-    }
-
-
-    public function info($event_id)
-    {
-
-        $event=Event::findOrFail($event_id);
-        return view('Events.info',compact('event'));
-
-
     }
 }
